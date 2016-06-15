@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topBg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F9EAF" 
+    >
+<!--  style="@style/leftStyle"-->
+    <ImageView
+        android:id="@+id/leftBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" 
+        android:src="@drawable/btn_back"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        />
+
+    <TextView
+        android:id="@+id/topText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/title_size" />
+
+    <TextView
+        android:id="@+id/rightBtn"
+        style="@style/rightBtnStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/text_normal_size" 
+        android:textColor="@android:color/white"
+        />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="#ACACAC"
+        android:visibility="gone"
+       />
+
+</RelativeLayout>
