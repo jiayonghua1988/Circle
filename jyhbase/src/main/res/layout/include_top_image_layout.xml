@@ -22,7 +22,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/title_size" />
+        android:textSize="@dimen/text_size_22" />
 <!-- style="@style/rightStyle" -->
     <ImageView
         android:id="@+id/rightBtn"

@@ -1,1 +1,1 @@
-include ':app', ':jyhbase', ':libzxing'
+include ':app', ':jyhbase', ':libzxing', ':Pulltorefresh'

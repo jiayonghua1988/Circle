@@ -8,6 +8,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.yhjia.me.crash.CrashHandler;
+import com.yhjia.me.okhttp.OkHttpUtils;
 
 public class IApplication extends Application {
 
@@ -18,16 +19,19 @@ public class IApplication extends Application {
 	public static final boolean isTestData = true;
 
 	private static Application instance;
+	public static Context context;
 
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		context = getApplicationContext();
 		instance = this;
 		initImageLoader(getApplicationContext());
 
 		//实例化 异常捕捉
 		CrashHandler.getInstance().init(this);
+		OkHttpUtils.getInstance().setBaseUrl("http://test.jiahao.me").setContext(this).debug("Base");
 	}
 
 

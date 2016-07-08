@@ -30,5 +30,53 @@
         android:text="加载网页"
         android:id="@+id/loadWeb"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/animtaionFromTop"
+        android:text="从底部滑出"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/browseBigPicture"
+        android:text="大图浏览"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnChoicePicture"
+        android:text="选择图片"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnUpdate"
+        android:text="版本更新"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打印log"
+        android:id="@+id/printLog"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnOkHttp"
+        android:text="@string/btnOkHttp_label"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/selectDate"
+        android:text="@string/pick_date"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/selectNumber"
+        android:text="@string/pick_number"
+        />
 
 </LinearLayout>

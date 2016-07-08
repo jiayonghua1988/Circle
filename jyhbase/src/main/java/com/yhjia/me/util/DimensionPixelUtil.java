@@ -41,7 +41,7 @@ public class DimensionPixelUtil {
 	}
 
 	/**
-	 * 根据手机的屏幕属性从 dip 的单�? 转成�? px(像素)
+	 * 根据手机的屏幕属性从 dip转化成px
 	 * 
 	 * @param context
 	 * @param value
@@ -53,7 +53,7 @@ public class DimensionPixelUtil {
 	}
 
 	/**
-	 * 根据手机的屏幕属性从 px(像素) 的单�? 转成�? dip
+	 * 根据手机的屏幕属性从 px转化成dip
 	 * 
 	 * @param context
 	 * @param value
@@ -65,7 +65,7 @@ public class DimensionPixelUtil {
 	}
 
 	/**
-	 * 根据手机的屏幕属性从 sp的单�? 转成为px(像素)
+	 * 根据手机的屏幕属性从 sp 转化成px
 	 * 
 	 * @param context
 	 * @param value
@@ -77,7 +77,7 @@ public class DimensionPixelUtil {
 	}
 
 	/**
-	 * 根据手机的屏幕属性从 px(像素) 的单�? 转成�? sp
+	 * 根据手机的屏幕属性从 px 转化成sp
 	 * 
 	 * @param context
 	 * @param value

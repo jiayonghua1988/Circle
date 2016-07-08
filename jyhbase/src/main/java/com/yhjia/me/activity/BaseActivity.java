@@ -82,4 +82,9 @@ public abstract class BaseActivity extends Activity implements View.OnClickListe
     public void toast(String msg) {
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

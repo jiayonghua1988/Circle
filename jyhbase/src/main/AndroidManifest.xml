@@ -1,7 +1,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.yhjia.me">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application android:allowBackup="true" android:label="@string/app_name"
         android:supportsRtl="true">
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="561db944e0f55af808000397" />
+
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="360" />
+
+        <!--加载网页 -->
+        <activity android:name=".webkit.WebContentActivity"/>
+        <!--大图浏览 -->
+        <activity android:name=".photo.browse.BrowserImageActivity"/>
+        <!--裁剪图片 -->
+        <activity android:name=".photo.take.CropImageActivity"/>
+        <!--选择相册 -->
+        <activity android:name=".activity.ChoicePictureActivity"/>
+        <!--相册分类 -->
+        <activity android:name=".photo.take.ChoiceClassifyActivity"/>
 
     </application>
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_eeeeee"
+    android:orientation="vertical" >
+
+    <com.yhjia.me.view.TopLayoutView
+        android:id="@+id/topLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/head_layout_height" />
+    <View
+        style="@style/lineStyle"
+        android:background="@color/color_d2d2d2"
+        android:layout_height="1dp"
+        />
+
+    <ListView
+        android:id="@+id/classifyList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:divider="#E4E4E4"
+        android:dividerHeight="1px"
+        android:listSelector="@drawable/list_select_color_2"
+        />
+
+</LinearLayout>

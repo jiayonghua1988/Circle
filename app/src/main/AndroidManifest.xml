@@ -42,6 +42,7 @@
         </activity>
 
         <activity android:name=".TestGuideActivity"/>
+        <activity android:name=".TestChoicePictureActivity"/>
     </application>
 
 </manifest>

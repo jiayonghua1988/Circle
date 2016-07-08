@@ -1,4 +1,32 @@
 <resources>
-    <string name="app_name">jyhBase</string>
+    <string name="app_name">集成Demo</string>
     <string name="loading">加载中&#8230;</string>
+    <string name="label_cancel">取消</string>
+    <string name="label_choice_picture">从手机相册选择</string>
+    <string name="label_take_photo">拍照</string>
+    <string name="label_complete">完成</string>
+    <string name="pull_to_refresh_pull_label">向下滚动可以刷新...</string>
+    <string name="pull_to_refresh_release_label">松开即可更新...</string>
+    <string name="pull_to_refresh_refreshing_label">加载中...</string>
+    <string name="pull_to_refresh_footer_release_label">松开后加载</string>
+    <string name="pull_to_refresh_footer_pull_label">向上滚动加载更多</string>
+    <string name="pull_to_refresh_footer_refreshing_label">加载中...</string>
+    <string name="NoMore">没有更多了</string>
+    <string name="pull_down_refresh">下拉刷新</string>
+    <string name="pull_release_refresh">释放刷新</string>
+    <string name="scan_success">扫描成功</string>
+    <string name="system_camera">调用系统相机</string>
+    <string name="net_error">网络异常，请稍后重试</string>
+
+
+
+
+    <!--pickView -->
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
 </resources>

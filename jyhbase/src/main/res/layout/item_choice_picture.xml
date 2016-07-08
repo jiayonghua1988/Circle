@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/color_EEEFF1"
+    >
+
+    <TextView
+        android:id="@+id/takePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/head_layout_height"
+        android:textSize="@dimen/text_size_16"
+        android:textColor="@color/color_353535"
+        android:text="@string/label_take_photo"
+        android:background="@drawable/click_select"
+        android:gravity="center"
+        />
+    <View
+        style="@style/lineStyle"
+        />
+    <TextView
+        android:id="@+id/choicePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/head_layout_height"
+        android:textSize="@dimen/text_size_16"
+        android:textColor="@color/color_353535"
+        android:text="@string/label_choice_picture"
+        android:background="@drawable/click_select"
+        android:gravity="center"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@android:color/transparent"
+        />
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/head_layout_height"
+        android:textSize="@dimen/text_size_16"
+        android:textColor="@color/color_353535"
+        android:text="@string/label_cancel"
+        android:background="@drawable/click_select"
+        android:gravity="center"
+        />
+
+</LinearLayout>

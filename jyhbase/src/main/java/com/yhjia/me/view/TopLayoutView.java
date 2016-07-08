@@ -14,9 +14,8 @@ import com.yhjia.me.R;
 
 
 /**
- * ͨ�ö������ַ�װ
- * ���������� 
- * @author ������
+ * 头部标题
+ * @author jiayonghua
  * 
  */
 public class TopLayoutView extends FrameLayout {
@@ -46,7 +45,7 @@ public class TopLayoutView extends FrameLayout {
 	}
 
 	/**
-	 * ��������������ť�ĵ������
+	 * 绑定click事件
 	 */
 	public void setOnClickListener(OnClickListener clickListener) {
 		leftBtn.setOnClickListener(clickListener);
@@ -54,7 +53,7 @@ public class TopLayoutView extends FrameLayout {
 	}
 
 	/**
-	 * ���������ͼ�Ƿ�ɼ�
+	 * 左边按钮显示隐藏
 	 * 
 	 * @param visibility
 	 */
@@ -69,7 +68,7 @@ public class TopLayoutView extends FrameLayout {
 	}
 
 	/**
-	 * �����Ҳ���ͼ�Ƿ�ɼ�
+	 * 右边按钮显示和隐藏
 	 * 
 	 * @param visibility
 	 */
@@ -78,7 +77,7 @@ public class TopLayoutView extends FrameLayout {
 	}
 
 	/**
-	 * �����Ҳ౳��
+	 * 设置右边按钮的图片
 	 * 
 	 * @param resId
 	 */
@@ -87,7 +86,7 @@ public class TopLayoutView extends FrameLayout {
 	}
 
 	/**
-	 * ��ȡ�Ҳఴť����
+	 * 获取右边文本的view
 	 * 
 	 * @return
 	 */
@@ -96,7 +95,7 @@ public class TopLayoutView extends FrameLayout {
 	}
 
 	/**
-	 * ���ñ����������ɫ
+	 * 设置标题的字体颜色
 	 * 
 	 * @param color
 	 */
@@ -107,7 +106,7 @@ public class TopLayoutView extends FrameLayout {
 	}
 
 	/**
-	 * �����ұ߰�ť��������ɫ
+	 * 设置右边按钮的字体颜色
 	 * 
 	 * @param color
 	 */
@@ -117,19 +116,20 @@ public class TopLayoutView extends FrameLayout {
 		}
 	}
 
+	/**
+	 * 设置标题的背景色
+	 * @param color
+	 */
 	public void setTopLayoutBg(String color) {
 		if (!TextUtils.isEmpty(color)) {
 			topBg.setBackgroundColor(Color.parseColor(color));
 		}
 	}
-	
+
 	/**
-	 * 
-	 * @param type  
-	 * ONLY_TITLE ����ʾ����     
-	 * BACK_AND_TITLE  ��ʾ���غͱ��� 
-	 * ALL   ��ʾ���� ����  ���ұߵı༭��ť
-	 * @param labels  ��һ��string�����Ǳ���   �ڶ���string�������ұ߰�ť���İ�
+	 *
+	 * @param type
+	 * @param labels
 	 */
 	public void setCommonTopLayout(Type type,String...  labels) {
 		topText.setVisibility(View.VISIBLE);
@@ -167,9 +167,11 @@ public class TopLayoutView extends FrameLayout {
 			break;
 		}
 	}
-	
+
+
 	public enum Type {
 		ONLY_TITLE,BACK_AND_TITLE,ALL,TITLE_AND_RIGHT
 	}
+
 
 }

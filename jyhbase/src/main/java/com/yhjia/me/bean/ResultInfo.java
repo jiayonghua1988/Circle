@@ -3,6 +3,7 @@ public class ResultInfo {
 	private String success;
 	private String errorCode;
 	private String errorMsg;
+
 	public String getErrorCode() {
 		return errorCode;
 	}
