@@ -47,6 +47,7 @@ public class MainActivity extends BaseActivity {
     private View selectNumber;
     private OptionPickerUtil numberPickerUtil;
     private View btnChangeTab;
+    private View btnNineGrid;
 
 
 
@@ -70,6 +71,7 @@ public class MainActivity extends BaseActivity {
         selectDate = findView(R.id.selectDate);
         selectNumber = findView(R.id.selectNumber);
         btnChangeTab = findView(R.id.btnChangeTab);
+        btnNineGrid = findView(R.id.btnNineGrid);
 
     }
 
@@ -88,6 +90,7 @@ public class MainActivity extends BaseActivity {
         selectDate.setOnClickListener(this);
         selectNumber.setOnClickListener(this);
         btnChangeTab.setOnClickListener(this);
+        btnNineGrid.setOnClickListener(this);
 
         timePickerUtil = new TimePickerUtil(this, TimePickerView.Type.YEAR_MONTH_DAY);
         timePickerUtil.setOnTimeSelectListener(new TimePickerView.OnTimeSelectListener() {
@@ -168,6 +171,9 @@ public class MainActivity extends BaseActivity {
             break;
             case R.id.btnChangeTab:
                 PagerViewDemoActivity.startPage(this);
+            break;
+            case R.id.btnNineGrid:
+                NinePictureGridDemo.startPage(this,NinePictureGridDemo.class);
             break;
         }
     }

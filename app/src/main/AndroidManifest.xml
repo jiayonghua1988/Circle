@@ -44,6 +44,7 @@
         <activity android:name=".TestGuideActivity"/>
         <activity android:name=".TestChoicePictureActivity"/>
         <activity android:name=".PagerViewDemoActivity"/>
+        <activity android:name=".NinePictureGridDemo"/>
     </application>
 
 </manifest>

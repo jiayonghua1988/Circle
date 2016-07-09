@@ -1,9 +1,10 @@
-package com.chiang.framework.views;
+package com.yhjia.me.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.GridView;
+
 public class FixGridView extends GridView {
 
 	public FixGridView(Context context) {
