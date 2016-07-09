@@ -6,6 +6,21 @@
     android:orientation="vertical"
     >
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,5 +93,14 @@
         android:id="@+id/selectNumber"
         android:text="@string/pick_number"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_tab"
+        android:id="@+id/btnChangeTab"
+        />
 
+</LinearLayout>
+
+    </ScrollView>
 </LinearLayout>

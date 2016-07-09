@@ -43,6 +43,7 @@
 
         <activity android:name=".TestGuideActivity"/>
         <activity android:name=".TestChoicePictureActivity"/>
+        <activity android:name=".PagerViewDemoActivity"/>
     </application>
 
 </manifest>

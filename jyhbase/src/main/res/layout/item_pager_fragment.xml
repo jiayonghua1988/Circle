@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_EFEFEF"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="192dip"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <com.yhjia.me.pagerfragment.PagerSlidingTabStrip xmlns:tab="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/head_layout_height"
+            tab:pstsColumn="3"
+            tab:pstsDividerColor="#00000000"
+            tab:pstsIndicatorColor="@color/custom_red"
+            tab:pstsIndicatorHeight="2dip"
+            tab:pstsTabPaddingLeftRight="12dip"
+            tab:pstsUnderlineHeight="0dip" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@android:color/black"
+        />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -2,16 +2,25 @@ package com.yhjia.me.activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
+
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 /**
  * activity的基类用来封装 共用的方法参数和属性
  */
 public abstract class BaseActivity extends Activity implements View.OnClickListener{
     private InputMethodManager imm;
+    protected ImageLoader imageLoader;
+    protected DisplayImageOptions options;
+    protected DisplayImageOptions.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,5 +95,25 @@ public abstract class BaseActivity extends Activity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
+    }
+
+    public static void startPage(Activity activity,Class toClazz) {
+        Intent intent = new Intent(activity,toClazz);
+        activity.startActivity(intent);
+    }
+
+    public void configLoadImage(int defaultDrawableId) {
+        imageLoader = ImageLoader.getInstance();
+        builder = new DisplayImageOptions.Builder();
+        builder.cacheOnDisk(true);
+        builder.considerExifParams(true);
+        builder.cacheInMemory(false);
+        builder.imageScaleType(ImageScaleType.IN_SAMPLE_INT);
+        builder.bitmapConfig(Bitmap.Config.RGB_565);
+        if (defaultDrawableId > 0) {
+            builder.showImageOnFail(defaultDrawableId);
+            builder.showImageForEmptyUri(defaultDrawableId);
+        }
+        options = builder.build();
     }
 }

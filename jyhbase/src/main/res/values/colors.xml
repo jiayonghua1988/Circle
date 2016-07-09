@@ -24,4 +24,6 @@
     <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
     <!--覆盖颜色-->
     <color name="bgColor_overlay">#60000000</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="custom_red">#FFFC5A9C</color>
 </resources>

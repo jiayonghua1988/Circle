@@ -3,7 +3,6 @@ package yhjia.com.circle.activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.xys.libzxing.zxing.activity.CaptureActivity;
 import com.yhjia.me.activity.BaseActivity;
@@ -47,8 +46,7 @@ public class MainActivity extends BaseActivity {
     private TimePickerUtil timePickerUtil;
     private View selectNumber;
     private OptionPickerUtil numberPickerUtil;
-    
-    private ViewGroup group;
+    private View btnChangeTab;
 
 
 
@@ -71,19 +69,8 @@ public class MainActivity extends BaseActivity {
         btnOkHttp = findView(R.id.btnOkHttp);
         selectDate = findView(R.id.selectDate);
         selectNumber = findView(R.id.selectNumber);
-        timePickerUtil = new TimePickerUtil(this, TimePickerView.Type.YEAR_MONTH_DAY);
-        timePickerUtil.setOnTimeSelectListener(new TimePickerView.OnTimeSelectListener() {
-            @Override
-            public void onTimeSelect(Date date) {
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-                ToastUtil.showToast(format.format(date));
-            }
-        });
-        ArrayList<String> arrays = new ArrayList<>();
-        for (int i = 1;i < 20;i++) {
-            arrays.add(i + "");
-        }
-        numberPickerUtil = new OptionPickerUtil(this,arrays,"岁");
+        btnChangeTab = findView(R.id.btnChangeTab);
+
     }
 
     @Override
@@ -100,6 +87,21 @@ public class MainActivity extends BaseActivity {
         btnOkHttp.setOnClickListener(this);
         selectDate.setOnClickListener(this);
         selectNumber.setOnClickListener(this);
+        btnChangeTab.setOnClickListener(this);
+
+        timePickerUtil = new TimePickerUtil(this, TimePickerView.Type.YEAR_MONTH_DAY);
+        timePickerUtil.setOnTimeSelectListener(new TimePickerView.OnTimeSelectListener() {
+            @Override
+            public void onTimeSelect(Date date) {
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                ToastUtil.showToast(format.format(date));
+            }
+        });
+        ArrayList<String> arrays = new ArrayList<>();
+        for (int i = 1;i < 20;i++) {
+            arrays.add(i + "");
+        }
+        numberPickerUtil = new OptionPickerUtil(this,arrays,"岁");
     }
 
 
@@ -163,6 +165,9 @@ public class MainActivity extends BaseActivity {
             break;
             case R.id.selectNumber:
                 numberPickerUtil.show();
+            break;
+            case R.id.btnChangeTab:
+                PagerViewDemoActivity.startPage(this);
             break;
         }
     }
