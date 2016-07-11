@@ -106,6 +106,12 @@
             android:text="@string/nine_grid_picture"
             android:id="@+id/btnNineGrid"
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_banner"
+            android:id="@+id/btnBanner"
+            />
 </LinearLayout>
 
     </ScrollView>

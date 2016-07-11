@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.utils.DiskCacheUtils;
 import com.yhjia.me.R;
+import com.yhjia.me.logger.LogUtil;
 import com.yhjia.me.photo.browse.ImageBean;
 import com.yhjia.me.photo.take.BitmapTools;
 import com.yhjia.me.photo.take.ChoiceClassifyActivity;
@@ -115,8 +116,14 @@ public class ChoicePictureActivity extends BaseActivity implements AdapterView.O
         } else {
             String path = imageBean.getImagePath() + "/" + imageBean.getName();
 //			Log.e("Test", "cropPath=" + path);
-            path = path.replace("file://", "");
-            toCropImage(path);
+//            path = path.replace("file://", "");
+//            toCropImage(path);
+            LogUtil.i("选择图片 path:" + path);
+            Intent intent = getIntent();
+            intent.putExtra("callBack",path);
+            setResult(876,intent);
+            finish();
+
         }
     }
 
@@ -146,6 +153,8 @@ public class ChoicePictureActivity extends BaseActivity implements AdapterView.O
 //            if (MyActivity.photoListener != null) {
 //                MyActivity.photoListener.callback(headPath);
 //            }
+            data.putExtra("callBack",headPath);
+            setResult(876,data);
             finish();
         } else if (requestCode == PhotoManager.CAMERA_REQ_CODE) {
             String imagePath = photoManage.getCameraPath();

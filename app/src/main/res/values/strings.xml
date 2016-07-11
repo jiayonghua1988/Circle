@@ -6,4 +6,5 @@
     <string name="pick_number">选择数字</string>
     <string name="change_tab">切换tab</string>
     <string name="nine_grid_picture">9宫格</string>
+    <string name="btn_banner">Banner</string>
 </resources>

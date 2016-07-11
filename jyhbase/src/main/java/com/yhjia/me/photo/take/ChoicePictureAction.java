@@ -16,7 +16,7 @@ import java.io.File;
 
 /**
  * Created by jiayonghua on 16/6/21.
- * 调用系统相机
+ * 调用系统相机 程序的入口
  */
 public class ChoicePictureAction implements View.OnClickListener{
     private FromBottomToTopPopup popup;
@@ -91,10 +91,15 @@ public class ChoicePictureAction implements View.OnClickListener{
 
         } else if (requestCode == PhotoManager.CAMERA_REQ_CODE) {
             String imagePath = photoManage.getCameraPath();
-//            if (listener != null) {
-//                listener.callback("file://" + photoManage.getCameraPath());
-//            }
-            toCropImage(imagePath);
+            if (listener != null) {
+                listener.callback("file://" + photoManage.getCameraPath());
+            }
+//            toCropImage(imagePath);
+        } else if (resultCode == 876) {
+            String callBackUrl = data.getStringExtra("callBack");
+            if (listener != null) {
+                listener.callback(callBackUrl);
+            }
         }
     }
 
