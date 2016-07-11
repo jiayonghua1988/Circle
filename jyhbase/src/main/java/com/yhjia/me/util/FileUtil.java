@@ -1,7 +1,9 @@
 package com.yhjia.me.util;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.net.Uri;
@@ -214,6 +216,51 @@ public class FileUtil {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+		return null;
+	}
+
+
+	/**
+	 * 根据Uri 获取 File的绝对路径
+	 * @return
+	 */
+	public static String getRealFilePathFromUri(Context context,Uri uri) {
+		if (null == uri) {
+			return null;
+		}
+		String scheme = uri.getScheme();
+		String data = null;
+		if (scheme == null) {
+			data = uri.getPath();
+		} else if (ContentResolver.SCHEME_FILE.equals(scheme)) {
+			data = uri.getPath();
+		} else if (ContentResolver.SCHEME_CONTENT.equals(scheme)) {
+			Cursor cursor = context.getContentResolver().query( uri, new String[] { MediaStore.Images.ImageColumns.DATA }, null, null, null );
+			if ( null != cursor ) {
+				if ( cursor.moveToFirst() ) {
+					int index = cursor.getColumnIndex( MediaStore.Images.ImageColumns.DATA );
+					if ( index > -1 ) {
+						data = cursor.getString( index );
+					}
+				}
+				cursor.close();
+			}
+		}
+		return data;
+	}
+
+	/**
+	 * 通过String uri 获取 File对象 支持图片上传需求
+	 * @param context
+	 * @param uri
+	 * @return
+	 */
+	public static File getFileFromStringUri(Context context,String uri) {
+		Uri fileUri = Uri.parse(uri);
+		String filePath = getRealFilePathFromUri(context,fileUri);
+		if (!TextUtils.isEmpty(filePath)) {
+			return new File(filePath);
 		}
 		return null;
 	}

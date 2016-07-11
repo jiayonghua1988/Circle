@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.utils.DiskCacheUtils;
 import com.yhjia.me.R;
 import com.yhjia.me.animation.FromBottomToTopPopup;
+import com.yhjia.me.util.DiskCacheUtils;
 
 import java.io.File;
 
