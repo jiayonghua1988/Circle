@@ -46,6 +46,7 @@
         <activity android:name=".PagerViewDemoActivity"/>
         <activity android:name=".NinePictureGridDemo"/>
         <activity android:name=".AutoScrollDemoActivity"/>
+
     </application>
 
 </manifest>

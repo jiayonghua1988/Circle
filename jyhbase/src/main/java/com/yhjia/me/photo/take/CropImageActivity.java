@@ -3,7 +3,6 @@ package com.yhjia.me.photo.take;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.TextView;
@@ -19,7 +18,7 @@ public class CropImageActivity extends BaseActivity {
 
 	public static final String PATH = "path";
 	public static final int RESULT_CODE = 1010;
-	public static final String CACHE_IMAGE_PATH = Environment.getExternalStorageDirectory().getPath() + "/Android/data/com.jiahao.wwyy/cache/";
+	public static final String CACHE_IMAGE_PATH = Environment.getExternalStorageDirectory().getPath() + "/Android/data/me.yhjia.base/cache/";
 	
 	protected ImageLoader imageLoader = ImageLoader.getInstance();
 	private CropImageView cropImageView;
@@ -29,14 +28,6 @@ public class CropImageActivity extends BaseActivity {
 	private String path;
 	private View btnCancel;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_cropimage);
-
-
-
-	}
 
 	@Override
 	public int initLayoutID() {
@@ -64,7 +55,7 @@ public class CropImageActivity extends BaseActivity {
 			return;
 		
 		ImageSize imageSize =new ImageSize(640, 640);
-		Bitmap bitmap = imageLoader.loadImageSync("file:///"+path,imageSize,new DisplayImageOptions.Builder().considerExifParams(true).bitmapConfig(Bitmap.Config.RGB_565).build());
+		Bitmap bitmap = imageLoader.loadImageSync("file:///" + path,imageSize,new DisplayImageOptions.Builder().considerExifParams(true).bitmapConfig(Bitmap.Config.RGB_565).build());
 		cropImageView.setDrawable(new BitmapDrawable(getResources(), bitmap), 128*2, 128*2);
 	}
 

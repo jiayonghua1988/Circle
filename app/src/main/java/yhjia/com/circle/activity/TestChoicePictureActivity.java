@@ -17,6 +17,7 @@ import com.yhjia.me.util.Validate;
 import com.yhjia.me.view.TopLayoutView;
 
 import java.io.File;
+import java.util.List;
 
 /**
  * Created by jiayonghua on 16/6/18.
@@ -40,6 +41,7 @@ public class TestChoicePictureActivity extends BaseActivity implements PictureCa
         topLayout.setCommonTopLayout(TopLayoutView.Type.BACK_AND_TITLE,getString(R.string.system_camera));
         topLayout.setOnClickListener(this);
         action = new ChoicePictureAction(this);
+        action.setCropImage(true);
         action.setPictureCallbackListener(this);
     }
 
@@ -91,6 +93,11 @@ public class TestChoicePictureActivity extends BaseActivity implements PictureCa
         if (!TextUtils.isEmpty(picUrl)) {
             imageLoader.displayImage(picUrl, showImg);
         }
+    }
+
+    @Override
+    public void callback(List<String> uris) {
+
     }
 
     @Override

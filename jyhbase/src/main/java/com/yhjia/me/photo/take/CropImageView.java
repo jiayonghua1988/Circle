@@ -223,7 +223,6 @@ public class CropImageView extends View {
 			int right = left + w;
 			int bottom = top + h;
 
-
 			mDrawableSrc.set(left, top, right, bottom);
 			mDrawableDst.set(mDrawableSrc);
 

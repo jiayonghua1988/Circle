@@ -8,7 +8,9 @@ import android.view.View;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.yhjia.me.R;
+import com.yhjia.me.activity.ChoicePictureActivity;
 import com.yhjia.me.animation.FromBottomToTopPopup;
+import com.yhjia.me.constant.CodeConstant;
 import com.yhjia.me.util.DiskCacheUtils;
 
 import java.io.File;
@@ -23,6 +25,8 @@ public class ChoicePictureAction implements View.OnClickListener{
     private PhotoManager photoManage;
     private ImageLoader imageloader;
     private PictureCallbackListener listener;
+    private boolean isCrop = false;
+    private boolean choiceMore = false;
 
     public ChoicePictureAction(Activity activity) {
         this.activity = activity;
@@ -62,8 +66,8 @@ public class ChoicePictureAction implements View.OnClickListener{
             activity.startActivityForResult(photoManage.getCameraIntent(), PhotoManager.CAMERA_REQ_CODE);
             popup.hide();
         } else if (id == R.id.choicePhoto) { // 选择图片
-            Intent choicePhotoIntent = new Intent(activity,/**ChoicePictureActivity.class**/ChoiceMorePictureActivity.class);
-            activity.startActivityForResult(choicePhotoIntent,998);
+            Intent choicePhotoIntent = new Intent(activity,choiceMore ? ChoiceMorePictureActivity.class : ChoicePictureActivity.class);
+            activity.startActivityForResult(choicePhotoIntent, CodeConstant.CODE_998);
             popup.hide();
         } else if (id == R.id.cancel) { //  取消
             popup.hide();
@@ -87,18 +91,26 @@ public class ChoicePictureAction implements View.OnClickListener{
             if (listener != null) {
                 listener.callback(headPath);
             }
-
         } else if (requestCode == PhotoManager.CAMERA_REQ_CODE) {
             String imagePath = photoManage.getCameraPath();
-            if (listener != null) {
-                listener.callback("file://" + photoManage.getCameraPath());
+            if (isCrop) {
+                toCropImage(imagePath);
+            } else {
+                if (listener != null) {
+                    listener.callback(imagePath);
+                }
             }
-//            toCropImage(imagePath);
         } else if (resultCode == 876) {
             String callBackUrl = data.getStringExtra("callBack");
-            if (listener != null) {
-                listener.callback(callBackUrl);
+            if (isCrop && !TextUtils.isEmpty(callBackUrl)) {
+                callBackUrl = callBackUrl.replace("file://","");
+                toCropImage(callBackUrl);
+            } else {
+                if (listener != null) {
+                    listener.callback(callBackUrl);
+                }
             }
+
         }
     }
 
@@ -106,12 +118,20 @@ public class ChoicePictureAction implements View.OnClickListener{
         if (!TextUtils.isEmpty(imagePath) && new File(imagePath).isFile()) {
             Intent intent = new Intent(activity, CropImageActivity.class);
             intent.putExtra(CropImageActivity.PATH, imagePath);
-            activity.startActivityForResult(intent, 133);
+            activity.startActivityForResult(intent, CodeConstant.CODE_133);
         }
     }
 
     public void setPictureCallbackListener(PictureCallbackListener listener) {
         this.listener = listener;
+    }
+
+    public void setCropImage(boolean isCrop) {
+        this.isCrop = isCrop;
+    }
+
+    public void setChoiceMore(boolean choiceMore) {
+        this.choiceMore = choiceMore;
     }
 
 }
