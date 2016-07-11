@@ -91,26 +91,24 @@ public class ChoicePictureAction implements View.OnClickListener{
             if (listener != null) {
                 listener.callback(headPath);
             }
-        } else if (requestCode == PhotoManager.CAMERA_REQ_CODE) {
-            String imagePath = photoManage.getCameraPath();
-            if (isCrop) {
-                toCropImage(imagePath);
+        } else {
+            String cropPath = null;
+            String imageUriPath = null;
+            if (requestCode == PhotoManager.CAMERA_REQ_CODE) {
+                String imagePath = photoManage.getCameraPath();
+                cropPath = imagePath;
+                imageUriPath = "file://" + imagePath;
+            } else if (resultCode == 876) {
+                imageUriPath = data.getStringExtra("callBack");
+                cropPath = imageUriPath.replace("file://","");
+            }
+            if (isCrop && !TextUtils.isEmpty(cropPath)) {
+                toCropImage(cropPath);
             } else {
                 if (listener != null) {
-                    listener.callback(imagePath);
+                    listener.callback(imageUriPath);
                 }
             }
-        } else if (resultCode == 876) {
-            String callBackUrl = data.getStringExtra("callBack");
-            if (isCrop && !TextUtils.isEmpty(callBackUrl)) {
-                callBackUrl = callBackUrl.replace("file://","");
-                toCropImage(callBackUrl);
-            } else {
-                if (listener != null) {
-                    listener.callback(callBackUrl);
-                }
-            }
-
         }
     }
 
