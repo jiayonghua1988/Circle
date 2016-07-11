@@ -179,6 +179,7 @@ public class ChoicePictureActivity extends BaseActivity implements AdapterView.O
         return false;
     }
 
+
     Handler handler2 = new Handler() {
 
         @Override

@@ -9,7 +9,6 @@ import android.view.View;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.utils.DiskCacheUtils;
 import com.yhjia.me.R;
-import com.yhjia.me.activity.ChoicePictureActivity;
 import com.yhjia.me.animation.FromBottomToTopPopup;
 
 import java.io.File;
@@ -63,7 +62,7 @@ public class ChoicePictureAction implements View.OnClickListener{
             activity.startActivityForResult(photoManage.getCameraIntent(), PhotoManager.CAMERA_REQ_CODE);
             popup.hide();
         } else if (id == R.id.choicePhoto) { // 选择图片
-            Intent choicePhotoIntent = new Intent(activity,ChoicePictureActivity.class);
+            Intent choicePhotoIntent = new Intent(activity,/**ChoicePictureActivity.class**/ChoiceMorePictureActivity.class);
             activity.startActivityForResult(choicePhotoIntent,998);
             popup.hide();
         } else if (id == R.id.cancel) { //  取消

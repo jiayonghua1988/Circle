@@ -27,6 +27,8 @@
         <activity android:name=".activity.ChoicePictureActivity"/>
         <!--相册分类 -->
         <activity android:name=".photo.take.ChoiceClassifyActivity"/>
+        <!--支持预览功能 选择多张图片 -->
+        <activity android:name=".photo.take.ChoiceMorePictureActivity"/>
 
     </application>
 
