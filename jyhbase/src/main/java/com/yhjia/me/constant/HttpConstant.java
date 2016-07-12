@@ -5,5 +5,5 @@ package com.yhjia.me.constant;
  * 网路请求参数 url
  */
 public interface HttpConstant {
-
+    String ARTICLE_GET_TYPE_LIST = "/article/gettypelist";
 }

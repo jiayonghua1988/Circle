@@ -8,8 +8,10 @@ import android.support.v4.app.FragmentActivity;
 
 import com.yhjia.me.pagerfragment.PagerView;
 import com.yhjia.me.util.ToastUtil;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import yhjia.com.circle.fragment.Fragment1;
 import yhjia.com.circle.fragment.Fragment2;
 import yhjia.com.circle.fragment.Fragment3;
@@ -20,6 +22,7 @@ import yhjia.com.circle.fragment.Fragment4;
  */
 public class PagerViewDemoActivity extends FragmentActivity implements PagerView.OnPagerListener{
     private PagerView pagerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +51,8 @@ public class PagerViewDemoActivity extends FragmentActivity implements PagerView
     }
 
 
-    public static void startPage(Activity activity) {
-        Intent intent = new Intent(activity,PagerViewDemoActivity.class);
+    public static void startPage(Activity activity,Class clazz) {
+        Intent intent = new Intent(activity,clazz);
         activity.startActivity(intent);
     }
 }
