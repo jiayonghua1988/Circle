@@ -20,6 +20,7 @@ import android.app.ActivityManager.MemoryInfo;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -535,7 +536,7 @@ public class PhoneUtil {
 	}
 
 	/**
-	 * 隐藏软键�?
+	 * 隐藏软键盘
 	 */
 	public static void hideSoftInputMode(Context context, View windowToken) {
 		((InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE))
@@ -554,7 +555,7 @@ public class PhoneUtil {
 		return infos.size();
 	}
 	/**
-	 * 获取手机的可用内�?
+	 * 获取手机的可用内存
 	 * @param context
 	 * @return
 	 */
@@ -635,11 +636,25 @@ public class PhoneUtil {
 		}
 		return null;
 	}
-	
+
+	/**
+	 * 验证邮箱格式
+	 * @param email
+	 * @return
+	 */
 	public static boolean validateEmail(String email) {
 		String str = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
 		Pattern p = Pattern.compile(str);
 		Matcher m = p.matcher(email);
 		return m.matches();
+	}
+
+	/**
+	 * 拨打电话
+	 */
+	public static void callPhone(Activity activity,String phoneNumber) {
+		Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		activity.startActivity(intent);
 	}
 }
