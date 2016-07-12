@@ -112,6 +112,12 @@
             android:text="@string/btn_banner"
             android:id="@+id/btnBanner"
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_type_1"
+            android:id="@+id/btnType1"
+            />
 </LinearLayout>
 
     </ScrollView>

@@ -49,6 +49,7 @@ public class MainActivity extends BaseActivity {
     private View btnChangeTab;
     private View btnNineGrid;
     private View btnBanner;
+    private View btnType1;
 
 
 
@@ -74,6 +75,7 @@ public class MainActivity extends BaseActivity {
         btnChangeTab = findView(R.id.btnChangeTab);
         btnNineGrid = findView(R.id.btnNineGrid);
         btnBanner = findView(R.id.btnBanner);
+        btnType1 = findView(R.id.btnType1);
 
     }
 
@@ -94,6 +96,7 @@ public class MainActivity extends BaseActivity {
         btnChangeTab.setOnClickListener(this);
         btnNineGrid.setOnClickListener(this);
         btnBanner.setOnClickListener(this);
+        btnType1.setOnClickListener(this);
 
         timePickerUtil = new TimePickerUtil(this, TimePickerView.Type.YEAR_MONTH_DAY);
         timePickerUtil.setOnTimeSelectListener(new TimePickerView.OnTimeSelectListener() {
@@ -180,6 +183,9 @@ public class MainActivity extends BaseActivity {
             break;
             case R.id.btnBanner:
                 AutoScrollDemoActivity.startPage(this,AutoScrollDemoActivity.class);
+            break;
+            case R.id.btnType1:
+                PinnerSectionListDemo.startPage(this,PinnerSectionListDemo.class);
             break;
         }
     }

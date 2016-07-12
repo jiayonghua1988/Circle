@@ -7,4 +7,5 @@
     <string name="change_tab">切换tab</string>
     <string name="nine_grid_picture">9宫格</string>
     <string name="btn_banner">Banner</string>
+    <string name="btn_type_1">一级分类</string>
 </resources>
