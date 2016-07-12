@@ -44,16 +44,15 @@ public class MainBean {
                 R.string.btn_banner,
                 R.string.btn_type_1
         };
+        return getLabels(resIds);
+    }
 
-
+    private List<String> getLabels(int [] resIds) {
         List<String> list = new ArrayList<String>();
         for (int resId : resIds) {
-            list.add(getString(resId));
+            list.add(context.getString(resId));
         }
         return list;
     }
 
-    private String getString(int resId) {
-        return context.getString(resId);
-    }
 }

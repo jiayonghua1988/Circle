@@ -6,7 +6,6 @@ import com.yhjia.me.activity.BaseActivity;
 import com.yhjia.me.constant.CodeConstant;
 import com.yhjia.me.util.ToastUtil;
 import com.yhjia.me.view.TopLayoutView;
-
 import yhjia.com.circle.adapter.MainAdapter;
 import yhjia.com.circle.bean.MainBean;
 import yhjia.com.circle.bean.MainClickHandler;
