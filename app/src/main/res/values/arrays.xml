@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_demo_list">
+        <item>@string/btn_guide</item>
+        <item>@string/btn_erCode</item>
+        <item>@string/btn_crash</item>
+        <item>@string/btn_load_web</item>
+        <item>@string/btn_out_from_bottom</item>
+        <item>@string/btn_big_picture_browse</item>
+        <item>@string/btn_choice_picture</item>
+        <item>@string/btn_update_version</item>
+        <item>@string/btn_print_log</item>
+        <item>@string/btnOkHttp_label</item>
+        <item>@string/pick_date</item>
+        <item>@string/pick_number</item>
+        <item>@string/change_tab</item>
+        <item>@string/nine_grid_picture</item>
+        <item>@string/btn_banner</item>
+        <item>@string/btn_type_1</item>
+        <item>@string/btn_show_menu</item>
+        <item>@string/btn_show_listPopupWindow</item>
+    </string-array>
+
+    <string-array name="list_popupWindow">
+        <item>@string/btn_diary</item>
+        <item>@string/release_topic</item>
+        <item>@string/btn_recourse</item>
+    </string-array>
+
+    <string-array name="load_images_demo_url">
+        <item>http://test.jiahao.me/repo/emo3pd141lzfa</item>
+        <item>http://test.jiahao.me/repo/2a32yk4yih4q3</item>
+        <item>http://test.jiahao.me/repo/hnbd4tyrejlru</item>
+        <item>http://test.jiahao.me/repo/ynwk1lthcxhvg</item>
+    </string-array>
+</resources>

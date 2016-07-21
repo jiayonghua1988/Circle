@@ -1,5 +1,7 @@
 package com.yhjia.me.photo.browse;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -148,5 +150,13 @@ public class BrowserImageActivity extends BaseActivity implements View.OnClickLi
 	@Override
 	public void onClick(View v) {
 
+	}
+
+	public static void startPage(Activity activity,String titleName,ArrayList<String> imgs,int index) {
+		Intent intent = new Intent(activity, BrowserImageActivity.class);
+		intent.putExtra(BrowserImageActivity.TAG_NAME,titleName);
+		intent.putExtra(BrowserImageActivity.TAG_IMGS, imgs);
+		intent.putExtra(BrowserImageActivity.TAG_INDEX, index);
+		activity.startActivity(intent);
 	}
 }

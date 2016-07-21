@@ -1,22 +1,24 @@
 package yhjia.com.circle.activity;
 
 import android.content.Intent;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import com.yhjia.me.activity.BaseActivity;
 import com.yhjia.me.constant.CodeConstant;
 import com.yhjia.me.util.ToastUtil;
 import com.yhjia.me.view.TopLayoutView;
+import java.util.Arrays;
 import yhjia.com.circle.adapter.MainAdapter;
-import yhjia.com.circle.bean.MainBean;
 import yhjia.com.circle.bean.MainClickHandler;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener{
 
     private ListView list;
     private TopLayoutView topLayout;
 
     private MainAdapter adapter;
-    private MainBean mainBean;
+    private MainClickHandler mainClickHandler;
 
     @Override
     public int initLayoutID() {
@@ -32,9 +34,10 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initLogic() {
-        mainBean = MainBean.getInstance(this);
-        adapter = new MainAdapter(this,mainBean.getData());
-        adapter.setMainItemClickListener(new MainClickHandler(this));
+        list.setOnItemClickListener(this);
+        String [] arrays = getResources().getStringArray(R.array.main_demo_list);
+        adapter = new MainAdapter(this, Arrays.asList(arrays));
+        mainClickHandler = new MainClickHandler(this);
         list.setAdapter(adapter);
     }
 
@@ -46,4 +49,8 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        mainClickHandler.onItem(position);
+    }
 }

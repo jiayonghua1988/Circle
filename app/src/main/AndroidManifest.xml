@@ -47,6 +47,8 @@
         <activity android:name=".NinePictureGridDemo"/>
         <activity android:name=".AutoScrollDemoActivity"/>
         <activity android:name=".PinnerSectionListDemo"/>
+        <activity android:name=".PopupMenuDemoActivity"/>
+        <activity android:name=".ListPopupWindowDemoActivity"/>
 
     </application>
 

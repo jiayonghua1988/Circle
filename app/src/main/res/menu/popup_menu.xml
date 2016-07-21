@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/btn_recommend" android:id="@+id/recommend" />
+    <item android:title="@string/btn_hot" android:id="@+id/hot"/>
+    <item android:title="@string/btn_society" android:id="@+id/society"/>
+    <item android:title="@string/btn_military" android:id="@+id/military"/>
+</menu>

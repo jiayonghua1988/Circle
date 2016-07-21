@@ -5,18 +5,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.yhjia.me.adapter.YYBaseAdapter;
+import com.yhjia.me.adapter.FBaseAdapter;
 
 import java.util.List;
 
 import yhjia.com.circle.activity.R;
 
 /**
- * Created by jiayonghua on 16/7/12.
+ * Created e on 16/7/21.
+ * @author jiayonghua
  */
-public class MainAdapter extends YYBaseAdapter<String> {
+public class ListPopupWindowAdapter extends FBaseAdapter<String>{
 
-    public MainAdapter(Context context, List<String> list) {
+
+    public ListPopupWindowAdapter(Context context, List<String> list) {
         super(context, list);
     }
 
@@ -26,24 +28,19 @@ public class MainAdapter extends YYBaseAdapter<String> {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         HolderView holderView = null;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.item_main,null);
+            convertView = inflater.inflate(R.layout.item_list_popup,null);
             holderView = new HolderView();
-            holderView.name = (TextView) convertView.findViewById(R.id.name);
+            holderView.tvContent1 = (TextView) convertView.findViewById(R.id.tvLabel);
             convertView.setTag(holderView);
         } else {
             holderView = (HolderView) convertView.getTag();
         }
 
-        holderView.name.setText(list.get(position));
+        holderView.tvContent1.setText(list.get(position));
         return convertView;
-    }
-
-
-    public class HolderView {
-        public TextView name;
     }
 
 }
